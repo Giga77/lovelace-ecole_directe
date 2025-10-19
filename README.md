@@ -1,58 +1,55 @@
-# Lovelace cards for the Pronote integration
+# Cards for the Ecole Directe integration
 
-A few cards to help display informations from the [Pronote integration for Home Assistant](https://github.com/delphiki/hass-pronote)
+A few cards to help display informations from the [Ecole Directe integration for Home Assistant](https://github.com/hacf-fr/hass-ecoledirecte)
 
 ## Installation
 
 ### Using HACS
 
-Add this repository to HACS : https://github.com/delphiki/lovelace-pronote.git
+Add this repository to HACS : https://github.com/hacf-fr/EcoleDirecteHACards.git
 then:  
-HACS > Lovelace > **Pronote Cards**
+HACS > Lovelace > **Ecole Directe Cards**
 
 ## Cards
 
 ### Timetable
-  
-![Timetable card example](/doc/images/timetable-card.png "Timetable card example").  
-  
+
+![Timetable card example](/doc/images/timetable-card.png "Timetable card example").
+
 ```yaml
-type: custom:pronote-timetable-card
-entity: sensor.pronote_XXXX_YYYY_timetable_next_day
+type: custom:ecole_directe-timetable-card
+entity: sensor.timetable_next_day
 display_header: true
 display_lunch_break: true
 display_classroom: true
 display_teacher: true
 display_day_hours: true
 dim_ended_lessons: true
-max_days: null
-current_week_only: false
 ```
 
 This card can be used with all timetable sensors.
 
 ### Homework
-  
+
 ![Homework card example](/doc/images/homework-card.png "Homework card example").
-  
+
 ```yaml
-type: custom:pronote-homework-card
-entity: sensor.pronote_XXXX_YYYY_homework
+type: custom:ecole_directe-homework-card
+entity: sensor.homework
 display_header: true
 display_done_homework: true
 reduce_done_homework: true
-current_week_only: false
 ```
 
 This card can be used with all homework sensors.
 
 ### Grades
-  
+
 ![Grades card example](/doc/images/grades-card.png "Grades card example").
-  
+
 ```yaml
-type: custom:pronote-grades-card
-entity: sensor.pronote_XXXX_YYYY_grades
+type: custom:ecole_directe-grades-card
+entity: sensor.grades
 grade_format: full # 'full' will display grade as "X/Y", 'short' will display "X"
 display_header: true
 display_date: true
@@ -68,12 +65,12 @@ max_grades: null
 ```
 
 ### Averages
-  
+
 ![Averages card example](/doc/images/averages-card.png "Averages card example").
-  
+
 ```yaml
-type: custom:pronote-averages-card
-entity: sensor.pronote_XXXX_YYYY_averages
+type: custom:ecole_directe-averages-card
+entity: sensor.averages
 average_format: full # 'full' will display grade as "X/Y", 'short' will display "X"
 display_header: true
 compare_with_class_average: true
@@ -84,12 +81,12 @@ display_class_max: true
 ```
 
 ### Evaluations
-  
+
 ![Evaluations card example](/doc/images/evaluations-card.png "Evaluations card example").
-  
+
 ```yaml
-type: custom:pronote-evaluations-card
-entity: sensor.pronote_XXXX_YYYY_evaluations
+type: custom:ecole_directe-evaluations-card
+entity: sensor.evaluations
 display_header: true
 display_description: true
 display_teacher: true
@@ -100,26 +97,14 @@ max_evaluations: null
 child_name: null
 ```
 
-### Absences
-  
-![Absences card example](/doc/images/absences-card.png "Absences card example").
-  
-```yaml
-type: custom:pronote-absences-card
-entity: sensor.pronote_XXXX_YYYY_absences
-display_header: true
-max_absences: null
-child_name: null
-```
+### Absences et retards
 
-### Delays
-  
-![Absences card example](/doc/images/delays-card.png "Delays card example").
-  
+![Absences card example](/doc/images/absences-card.png "Absences card example").
+
 ```yaml
-type: custom:pronote-delays-card
-entity: sensor.pronote_XXXX_YYYY_delays
+type: custom:ecole_directe-absences-retards-card
+entity: sensor.absences
 display_header: true
-max_delays: null
+max: null
 child_name: null
 ```

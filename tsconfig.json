@@ -1,14 +1,10 @@
 {
   "compilerOptions": {
+    "declaration": true,
     "target": "es2017",
     "module": "esnext",
     "moduleResolution": "node",
     "lib": ["es2017", "dom", "dom.iterable"],
-    "plugins": [
-      {
-        "name": "ts-lit-plugin"
-      }
-    ],
     "noEmit": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
@@ -18,8 +14,11 @@
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "experimentalDecorators": true,
+    "outDir": "dist",
+    "rootDir": ".",
     "sourceMap": true,
     "allowSyntheticDefaultImports": true
   },
-  "include": ["src/*", "src/**/*"]
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules"]
 }
